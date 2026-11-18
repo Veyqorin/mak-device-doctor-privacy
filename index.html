@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Mak Device Doctor</title>
+  <meta
+    name="description"
+    content="Official Privacy Policy for Mak Device Doctor, an Android smartphone hardware diagnostics application. Learn how device data, permissions, local PDF reports, and Google AdMob/UMP consent are handled."
+  />
+  <meta name="theme-color" content="#0B111E" />
+  <style>
+    :root {
+      --bg-base: #070b14;
+      --bg-surface: #0e1626;
+      --bg-card: #121c30;
+      --bg-card-hover: #16233b;
+      --border-subtle: rgba(148, 163, 184, 0.14);
+      --border-accent: rgba(56, 189, 248, 0.35);
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent-cyan: #38bdf8;
+      --accent-teal: #2dd4bf;
+      --accent-emerald: #34d399;
+      --accent-amber: #fbbf24;
+      --shadow-card: 0 18px 45px rgba(2, 6, 23, 0.55);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-pill: 999px;
+      --max-width: 1120px;
+      --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      background-color: var(--bg-base);
+      background-image:
+        radial-gradient(900px 500px at 12% -5%, rgba(56, 189, 248, 0.12), transparent 60%),
+        radial-gradient(700px 450px at 90% 10%, rgba(45, 212, 191, 0.08), transparent 60%);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      transition: color 0.2s ease, opacity 0.2s ease;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--accent-teal);
+      text-decoration: underline;
+      outline: none;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: var(--accent-cyan);
+      color: #06101e;
+      font-weight: 700;
+      padding: 0.65rem 1rem;
+      border-radius: 0 0 8px 0;
+      z-index: 1000;
+    }
+
+    .skip-link:focus {
+      left: 0;
+    }
+
+    /* Header / Top Bar */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(7, 11, 20, 0.82);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-primary);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand:hover {
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(45, 212, 191, 0.16));
+      border: 1px solid var(--border-accent);
+      color: var(--accent-cyan);
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .brand-sub {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 0.45rem 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .header-nav a {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .header-nav a:hover,
+    .header-nav a.active {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    /* Hero */
+    .hero {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 2rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(160deg, rgba(18, 28, 48, 0.95), rgba(11, 18, 34, 0.96));
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(500px 200px at 95% 0%, rgba(56, 189, 248, 0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(56, 189, 248, 0.28);
+    }
+
+    .pill.emerald {
+      background: rgba(52, 211, 153, 0.12);
+      color: var(--accent-emerald);
+      border-color: rgba(52, 211, 153, 0.28);
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    h1 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(1.9rem, 3.6vw, 2.75rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-lead {
+      margin: 0 0 1.5rem;
+      max-width: 72ch;
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.9rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .meta-item {
+      background: rgba(7, 11, 20, 0.45);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+    }
+
+    .meta-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .meta-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      word-break: break-word;
+    }
+
+    /* Main Content + Sidebar TOC */
+    .layout {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.5rem 4.5rem;
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 5.25rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+    }
+
+    .toc-title {
+      margin: 0 0 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .toc-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .toc-list a {
+      display: block;
+      padding: 0.45rem 0.75rem;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      border-left: 2px solid transparent;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .toc-list a:hover,
+    .toc-list a.active {
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent-cyan);
+      border-left-color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    .sections {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .policy-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(2, 6, 23, 0.35);
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.45s ease, transform 0.45s ease, border-color 0.25s ease;
+    }
+
+    .policy-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .policy-card:hover {
+      border-color: rgba(56, 189, 248, 0.26);
+    }
+
+    .policy-card h2 {
+      margin: 0 0 0.9rem;
+      font-size: 1.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--text-primary);
+    }
+
+    .sec-num {
+      display: inline-grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      flex-shrink: 0;
+    }
+
+    .policy-card h3 {
+      margin: 1.35rem 0 0.5rem;
+      font-size: 1.02rem;
+      color: var(--accent-teal);
+    }
+
+    .policy-card p {
+      margin: 0 0 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .policy-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .clean-list {
+      margin: 0.5rem 0 0.9rem;
+      padding-left: 1.25rem;
+      color: var(--text-secondary);
+    }
+
+    .clean-list li {
+      margin-bottom: 0.45rem;
+    }
+
+    .clean-list strong {
+      color: var(--text-primary);
+    }
+
+    .commitments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .commitment-box {
+      background: rgba(7, 11, 20, 0.5);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 0.95rem 1rem;
+    }
+
+    .commitment-box strong {
+      display: block;
+      color: var(--accent-emerald);
+      font-size: 0.92rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .commitment-box span {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 0.9rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    th,
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+      vertical-align: top;
+    }
+
+    th {
+      background: rgba(7, 11, 20, 0.65);
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    td {
+      color: var(--text-secondary);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.84em;
+      color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.1);
+      padding: 0.15rem 0.4rem;
+      border-radius: 6px;
+    }
+
+    .contact-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: rgba(7, 11, 20, 0.55);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-md);
+      padding: 1.15rem 1.25rem;
+      margin-top: 0.9rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-teal));
+      color: #04101f;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.65rem 1.15rem;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, filter 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      text-decoration: none;
+      color: #04101f;
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--border-subtle);
+      background: rgba(7, 11, 20, 0.75);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .back-top {
+      position: fixed;
+      right: 1.25rem;
+      bottom: 1.25rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      color: var(--accent-cyan);
+      border: 1px solid var(--border-accent);
+      box-shadow: var(--shadow-card);
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.2s ease;
+    }
+
+    .back-top.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .back-top:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .hero-card,
+      .policy-card {
+        padding: 1.4rem;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+      }
+
+      .header-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        background: rgba(11, 17, 30, 0.98);
+        border-bottom: 1px solid var(--border-subtle);
+        padding: 1rem 1.5rem;
+        gap: 0.75rem;
+      }
+
+      .header-nav.open {
+        display: flex;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      .policy-card {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Mak Device Doctor Privacy Policy Home">
+        <span class="brand-mark" aria-hidden="true">MD</span>
+        <span>
+          Mak Device Doctor
+          <span class="brand-sub">Privacy Policy</span>
+        </span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primaryNav"
+      >
+        Menu
+      </button>
+
+      <nav class="header-nav" id="primaryNav" aria-label="Primary sections">
+        <a href="#overview">Overview</a>
+        <a href="#data-access">Data Access</a>
+        <a href="#permissions">Permissions</a>
+        <a href="#third-party">AdMob &amp; UMP</a>
+        <a href="#retention">Retention</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-card">
+      <div class="badge-row">
+        <span class="pill"><span class="dot" aria-hidden="true"></span> Android Diagnostics Suite</span>
+        <span class="pill emerald"><span class="dot" aria-hidden="true"></span> Local-First Architecture</span>
+      </div>
+      <h1>Privacy Policy for Mak Device Doctor</h1>
+      <p class="hero-lead">
+        This Privacy Policy explains how <strong>Mak Device Doctor</strong> accesses hardware information on your Android
+        device, stores diagnostic results locally, generates PDF reports, and integrates Google AdMob and Google User
+        Messaging Platform (UMP) consent management.
+      </p>
+      <div class="meta-grid">
+        <div class="meta-item">
+          <span class="meta-label">Application</span>
+          <span class="meta-value">Mak Device Doctor</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Developer</span>
+          <span class="meta-value">Mak Device Doctor</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Effective Date</span>
+          <span class="meta-value">November 18, 2026</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Contact Email</span>
+          <span class="meta-value">
+            <a href="mailto:contact.ahmedghabri@gmail.com">contact.ahmedghabri@gmail.com</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="layout">
+    <aside class="toc" aria-label="Table of contents">
+      <h2 class="toc-title">On This Page</h2>
+      <ul class="toc-list">
+        <li><a href="#overview">1. Privacy Commitments</a></li>
+        <li><a href="#data-access">2. Hardware &amp; Data Access</a></li>
+        <li><a href="#permissions">3. Android Permissions</a></li>
+        <li><a href="#local-storage">4. Local Storage &amp; PDFs</a></li>
+        <li><a href="#third-party">5. Third-Party Ads (AdMob)</a></li>
+        <li><a href="#consent">6. UMP Consent &amp; Privacy Options</a></li>
+        <li><a href="#retention">7. Data Retention &amp; Deletion</a></li>
+        <li><a href="#children">8. Children's Privacy &amp; Updates</a></li>
+        <li><a href="#contact">9. Contact Us</a></li>
+      </ul>
+    </aside>
+
+    <main id="main-content" class="sections">
+      <article class="policy-card" id="overview">
+        <h2><span class="sec-num">1</span> Core Privacy Commitments</h2>
+        <p>
+          <strong>Mak Device Doctor</strong> is designed as a local-first smartphone hardware diagnostics application.
+          We do not operate application-owned backend servers to collect, store, or analyze your diagnostic results.
+        </p>
+        <div class="commitments-grid">
+          <div class="commitment-box">
+            <strong>No User Accounts</strong>
+            <span>No registration, login, email sign-up, or user profiles are required.</span>
+          </div>
+          <div class="commitment-box">
+            <strong>No App Backend Servers</strong>
+            <span>Diagnostic test results are stored locally on your device, not uploaded to our servers.</span>
+          </div>
+          <div class="commitment-box">
+            <strong>No Location / GPS Access</strong>
+            <span>The app does not request GPS or location permissions.</span>
+          </div>
+          <div class="commitment-box">
+            <strong>No Personal Data Access</strong>
+            <span>No access to contacts, SMS messages, call logs, or personal files.</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="policy-card" id="data-access">
+        <h2><span class="sec-num">2</span> Hardware &amp; Device Information Accessed</h2>
+        <p>
+          To perform interactive hardware diagnostics and display system telemetry, Mak Device Doctor accesses the
+          following device information locally on your phone:
+        </p>
+        <ul class="clean-list">
+          <li><strong>Device Identity &amp; OS Info:</strong> Device manufacturer, model name, Android version, API level, and hardware platform identifier.</li>
+          <li><strong>Battery Information:</strong> Battery percentage, charging status, power source, health status, temperature, voltage, and live charging current.</li>
+          <li><strong>Storage Capacity:</strong> Internal and removable storage totals, used/free space, and a temporary read/write probe file inside the app's private cache directory that is deleted immediately after verification.</li>
+          <li><strong>Hardware Sensor Readings:</strong> Live readings from available sensors (such as accelerometer, gyroscope, magnetometer, proximity, light, barometer, gravity, linear acceleration, and rotation vector) while the Sensors diagnostic screen is active.</li>
+          <li><strong>Camera Preview &amp; Autofocus:</strong> Camera hardware availability, live camera preview, autofocus verification, and flash/torch testing. The camera is used strictly for live preview and hardware testing — <strong>not</strong> for capturing or saving photos or videos.</li>
+          <li><strong>Temporary Microphone Input:</strong> Real-time audio input levels (dBFS) and temporary in-memory PCM audio for immediate loopback verification. Microphone audio is processed temporarily in memory and is never uploaded or saved to external storage.</li>
+        </ul>
+      </article>
+
+      <article class="policy-card" id="permissions">
+        <h2><span class="sec-num">3</span> Android Permissions</h2>
+        <p>
+          Mak Device Doctor requests only the permissions required for hardware testing and Google advertising/consent
+          services:
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Permission</th>
+                <th>Type</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>CAMERA</code></td>
+                <td>Runtime (Optional)</td>
+                <td>Used only when you run the Camera Diagnostic screen for live preview, autofocus, and flash/torch testing.</td>
+              </tr>
+              <tr>
+                <td><code>RECORD_AUDIO</code></td>
+                <td>Runtime (Optional)</td>
+                <td>Used only when you run the Microphone Diagnostic screen to measure live audio input levels in memory.</td>
+              </tr>
+              <tr>
+                <td><code>INTERNET</code></td>
+                <td>Normal</td>
+                <td>Used by Google Mobile Ads SDK Next-Gen and Google User Messaging Platform (UMP) to request consent configurations and load ads.</td>
+              </tr>
+              <tr>
+                <td><code>ACCESS_NETWORK_STATE</code></td>
+                <td>Normal</td>
+                <td>Used by Google Mobile Ads SDK Next-Gen and UMP to check network connectivity before making ad or consent requests.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="policy-card" id="local-storage">
+        <h2><span class="sec-num">4</span> Local Storage &amp; PDF Report Generation</h2>
+        <p>
+          Your diagnostic session results and app preferences (selected language and theme mode) are stored locally in
+          private Android <code>SharedPreferences</code> on your device.
+        </p>
+        <p>
+          When you generate a Full Device Report PDF, the document is created locally on your device and saved
+          exclusively in the application's private cache directory (<code>cacheDir/reports/</code>). PDF files are only
+          opened or shared with external apps when you explicitly choose <strong>Open PDF</strong> or
+          <strong>Share PDF</strong> via Android's secure <code>FileProvider</code> mechanism.
+        </p>
+        <p>
+          Temporary PDF reports and cache files are excluded from Android Auto Backup and device-to-device transfers.
+        </p>
+      </article>
+
+      <article class="policy-card" id="third-party">
+        <h2><span class="sec-num">5</span> Third-Party Advertising Services</h2>
+        <p>
+          Mak Device Doctor integrates official Google advertising and consent libraries:
+        </p>
+        <ul class="clean-list">
+          <li><strong>Google Mobile Ads SDK Next-Gen (version 1.6.0)</strong></li>
+          <li><strong>Google User Messaging Platform — UMP (version 4.0.0)</strong></li>
+        </ul>
+        <h3>Supported Ad Formats</h3>
+        <ul class="clean-list">
+          <li><strong>Banner Ads:</strong> Displayed on the Dashboard screen only.</li>
+          <li><strong>Interstitial Ads:</strong> Displayed only at natural transition points after returning from diagnostic workflows, subject to frequency limits.</li>
+          <li><strong>Rewarded Ads:</strong> Optionally watched by the user to unlock PDF Report export.</li>
+        </ul>
+        <p>
+          When ad requests are permitted by your consent settings, Google advertising services may automatically process
+          device, advertising identifier (such as Advertising ID or App Set ID), network/IP address, coarse location
+          inferred from IP, and ad interaction information in accordance with
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>
+          and
+          <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">How Google uses information from sites or apps that use our services</a>.
+        </p>
+      </article>
+
+      <article class="policy-card" id="consent">
+        <h2><span class="sec-num">6</span> Consent Management &amp; Privacy Options</h2>
+        <p>
+          Mak Device Doctor uses <strong>Google User Messaging Platform (UMP) 4.0.0</strong> to check applicable privacy
+          requirements on app launch and present consent forms where required by regional regulations (such as GDPR in
+          the EEA/UK or applicable US state privacy laws).
+        </p>
+        <p>
+          The Google Mobile Ads SDK is initialized and permitted to request ads only after UMP consent checks confirm
+          that ad requests are allowed under your current consent state.
+        </p>
+        <p>
+          Where required by applicable regulations, a <strong>Privacy Options</strong> entry is automatically displayed
+          inside the application's <strong>Settings</strong> screen so you can review or update your advertising consent
+          preferences at any time.
+        </p>
+      </article>
+
+      <article class="policy-card" id="retention">
+        <h2><span class="sec-num">7</span> Data Retention &amp; Deletion</h2>
+        <ul class="clean-list">
+          <li><strong>Local Diagnostic Results &amp; Preferences:</strong> Retained locally on your device until overwritten by new tests, cleared via Android <em>Settings &gt; Apps &gt; Mak Device Doctor &gt; Storage &gt; Clear storage</em>, or removed when you uninstall the application.</li>
+          <li><strong>PDF Reports in App Cache:</strong> Retained temporarily in the app's private cache directory and automatically subject to Android system cache cleanup, or removable anytime via Android <em>Clear cache</em> or uninstalling the app.</li>
+          <li><strong>Temporary Storage &amp; Audio Data:</strong> Storage read/write probe files are deleted immediately after each check; microphone diagnostic audio is held in memory only during the test.</li>
+          <li><strong>Google Advertising &amp; Consent Data:</strong> Data processed by Google AdMob and UMP is handled and retained separately by Google in accordance with Google's privacy policies and your consent choices.</li>
+        </ul>
+      </article>
+
+      <article class="policy-card" id="children">
+        <h2><span class="sec-num">8</span> Children's Privacy &amp; Policy Updates</h2>
+        <p>
+          Mak Device Doctor is a general-utility smartphone hardware diagnostics tool and is not directed at children
+          under the age of 13 (or the applicable minimum age in your jurisdiction). We do not knowingly collect personal
+          information from children.
+        </p>
+        <p>
+          We may update this Privacy Policy from time to time to reflect app updates, SDK upgrades, or regulatory
+          changes. Any updates will be posted on this page with an updated effective date.
+        </p>
+      </article>
+
+      <article class="policy-card" id="contact">
+        <h2><span class="sec-num">9</span> Contact Information</h2>
+        <p>
+          If you have any questions, concerns, or requests regarding this Privacy Policy or Mak Device Doctor's privacy
+          practices, please contact the developer directly:
+        </p>
+        <div class="contact-box">
+          <div>
+            <span class="meta-label">Developer Contact</span>
+            <strong style="font-size: 1rem;">Mak Device Doctor</strong>
+            <div style="color: var(--text-secondary); font-size: 0.92rem;">
+              <a href="mailto:contact.ahmedghabri@gmail.com">contact.ahmedghabri@gmail.com</a>
+            </div>
+          </div>
+          <a class="btn-primary" href="mailto:contact.ahmedghabri@gmail.com">Send Email</a>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Mak Device Doctor. All rights reserved.</p>
+  </footer>
+
+  <button class="back-top" id="backTop" type="button" aria-label="Back to top">&uarr;</button>
+
+  <script>
+    (function () {
+      const navToggle = document.getElementById("navToggle");
+      const primaryNav = document.getElementById("primaryNav");
+      const backTop = document.getElementById("backTop");
+      const cards = document.querySelectorAll(".policy-card");
+      const tocLinks = document.querySelectorAll(".toc-list a, .header-nav a");
+
+      if (navToggle && primaryNav) {
+        navToggle.addEventListener("click", function () {
+          const expanded = primaryNav.classList.toggle("open");
+          navToggle.setAttribute("aria-expanded", String(expanded));
+        });
+
+        primaryNav.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            primaryNav.classList.remove("open");
+            navToggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+
+      if ("IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.08 }
+        );
+
+        cards.forEach(function (card) {
+          revealObserver.observe(card);
+        });
+
+        const sectionObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                const id = "#" + entry.target.id;
+                tocLinks.forEach(function (a) {
+                  a.classList.toggle("active", a.getAttribute("href") === id);
+                });
+              }
+            });
+          },
+          { rootMargin: "-25% 0px -65% 0px" }
+        );
+
+        cards.forEach(function (card) {
+          sectionObserver.observe(card);
+        });
+      } else {
+        cards.forEach(function (card) {
+          card.classList.add("visible");
+        });
+      }
+
+      if (backTop) {
+        window.addEventListener("scroll", function () {
+          backTop.classList.toggle("show", window.scrollY > 400);
+        });
+        backTop.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
